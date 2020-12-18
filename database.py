@@ -154,12 +154,3 @@ class Database(object):
     def view_purchase(self):
         self.cursor.execute("SELECT view_purchase()")
         return self.cursor.fetchall()
-
-    
-    
-
-
-
-
-    
-    

@@ -481,4 +481,3 @@ class MainWindow(QMainWindow):
             self.purchase_button.setStyleSheet(pressed_style)
             self.book_button.setStyleSheet(not_pressed_style)
             self.person_button.setStyleSheet(not_pressed_style)
-
