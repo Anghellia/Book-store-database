@@ -57,7 +57,7 @@ class Database(object):
         self.connection.close()
         self.connect()
         self.cursor = self.connection.cursor()
-        with open("database.sql", 'r') as file:
+        with open("sql/database.sql", 'r') as file:
             self.cursor.execute(file.read())
         user = self.user.get_user_info() 
         self.cursor.callproc("delete_database", (self.dbname, *user))
