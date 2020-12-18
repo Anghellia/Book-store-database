@@ -43,7 +43,7 @@ BEGIN
 		person_id integer NOT NULL,
 		dd integer NOT NULL CONSTRAINT valid_dd CHECK (dd >= 1 and dd <= 31),
 		mm integer NOT NULL CONSTRAINT valid_mm CHECK (mm >= 1 and mm <= 12),
-		purchase_price integer NOT NULL CONSTRAINT true_sum_1 CHECK (purchase_price > 0), -- ???
+		purchase_price integer NOT NULL CONSTRAINT valid_price CHECK (purchase_price > 0),
 		FOREIGN KEY (book_id) REFERENCES book(book_id)
 		ON DELETE CASCADE ON UPDATE CASCADE,
 		FOREIGN KEY (person_id) REFERENCES person(person_id)
