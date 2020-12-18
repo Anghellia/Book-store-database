@@ -1,9 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS dblink;
 
-
 CREATE OR REPLACE FUNCTION create_database(dbname text, _user text, _password text) RETURNS VOID AS $$
 BEGIN
-	CREATE EXTENSION IF NOT EXISTS dblink;
 		IF EXISTS (SELECT 1 FROM pg_database WHERE datname = dbname) THEN
 			RAISE EXCEPTION 'Database already exists';
 		ELSE
